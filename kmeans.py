@@ -52,4 +52,21 @@ plt.ylabel('Score')
 plt.title('Elbow Curve') # Elbow Method
 plt.show()
 
-kmeans 
+kmeans = KMeans(n_clusters=5).fit(x)
+centroids = kmeans.cluster_centers_
+print(centroids)
+
+# predicting the clusters
+labels = kmeans.predict(x)
+# getting the clusters centers
+C = kmeans.cluster_centers_
+colores=['red','green','blue','cyan','yellow']
+asignar=[]
+for row in labels:
+    asignar.append(colores[row])
+
+fig = plt.figure()
+#ax = Axes3D(fig)
+ax = fig.add_subplot(111, projection='3d') # version recomendada para crear graficos 3d 
+ax.scatter(x[:, 0], x[:, 1], x[:, 2], c=asignar,s=60)
+ax.scatter(C[:, 0], C[:, 1], C[:, 2], marker='*', c=colores, s=1000)

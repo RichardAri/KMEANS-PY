@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.metrics import pairwise_distances_argmin_min
 import seaborn as sb
+import pandas as pd
 
 %matplotlib inline
 
@@ -70,3 +71,19 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d') # version recomendada para crear graficos 3d 
 ax.scatter(x[:, 0], x[:, 1], x[:, 2], c=asignar,s=60)
 ax.scatter(C[:, 0], C[:, 1], C[:, 2], marker='*', c=colores, s=1000)
+
+f1 = df['op'].values
+f2 = df['ex'].values
+
+plt.scatter(f1, f2, c=asignar, s=70)
+plt.scatter(C[:, 0], C[:, 1], marker='*', c=colores, s=1000)
+plt.show()
+
+copy = df.copy()
+copy['usuario'] = df['usuario'].values
+copy['categoria'] = df['categoria'].values
+copy['label'] = labels;
+cantidadGrupo = pd.DataFrame()
+cantidadGrupo['color'] = colores
+cantidadGrupo['cantidad'] = copy.groupby('label').size()
+cantidadGrupo

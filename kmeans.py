@@ -13,7 +13,7 @@ plt.style.use('ggplot')
 #import de el dataset 
 from google.colab import drive
 drive.mount('/content/drive', force_remount=True)
-df = pd.read_csv('/content/drive/My Drive/SI_L09_KMEANS_DATASET.csv')
+df = pd.read_csv('/content/drive/My Drive/analisis.csv')
 
 df.head()
 

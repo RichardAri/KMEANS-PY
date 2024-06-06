@@ -87,3 +87,4 @@ cantidadGrupo = pd.DataFrame()
 cantidadGrupo['color'] = colores
 cantidadGrupo['cantidad'] = copy.groupby('label').size()
 cantidadGrupo
+

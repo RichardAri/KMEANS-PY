@@ -51,3 +51,5 @@ plt.xlabel('Number of Clusters')
 plt.ylabel('Score')
 plt.title('Elbow Curve') # Elbow Method
 plt.show()
+
+kmeans 

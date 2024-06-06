@@ -41,8 +41,8 @@ kmeans = [KMeans(n_clusters=i) for i in Nc]
 score = [kmeans[i].fit(x).score(x) for i in range(len(kmeans))]
 
 plt.plot(Nc, score)
-plt.xlabel('Número de Clusters')
-plt.ylabel('Puntuación')
+plt.xlabel('Numero de Clusters')
+plt.ylabel('Puntuacion')
 plt.title('Curva de Codo (Elbow Curve)')
 plt.show()
 
@@ -55,9 +55,9 @@ for n_cluster in range(2, 11):
     silhouette_scores.append(sil_score)
 
 plt.plot(range(2, 11), silhouette_scores)
-plt.xlabel('Número de Clusters')
-plt.ylabel('Índice de Silueta')
-plt.title('Índice de Silueta para K-means')
+plt.xlabel('Numero de Clusters')
+plt.ylabel('Indice de Silueta')
+plt.title('Indice de Silueta para K-means')
 plt.show()
 
 # validacion cruzada de kmeans
@@ -76,9 +76,9 @@ def kmeans_cross_validation(data, n_clusters, n_splits=5):
 cross_val_scores = [kmeans_cross_validation(x, n_clusters=i) for i in range(2, 11)]
 
 plt.plot(range(2, 11), cross_val_scores)
-plt.xlabel('Número de Clusters')
-plt.ylabel('Puntuación de Validación Cruzada')
-plt.title('Validación Cruzada para K-means')
+plt.xlabel('Numero de Clusters')
+plt.ylabel('Puntuacion de Validacion Cruzada')
+plt.title('Validacion Cruzada para Kmeans')
 plt.show()
 
 # pureza del cluster
@@ -89,4 +89,4 @@ def cluster_purity(labels_true, labels_pred):
 kmeans = KMeans(n_clusters=5).fit(x)
 labels_pred = kmeans.labels_
 purity = cluster_purity(y, labels_pred)
-print(f'Pureza del Clúster: {purity:.2f}')
+print(f'Pureza del Cluster: {purity:.2f}')
